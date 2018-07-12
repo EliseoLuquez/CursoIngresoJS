@@ -10,4 +10,10 @@ function mostrar()
 		alert("Eres adolescente");
 	}
 
+	/*cuando quiero la interseccion es &&
+	si quiero la uno solo de los dos es ||
+	si es union es negado !=
+	*/
+
+
 }//FIN DE LA FUNCIÓN
