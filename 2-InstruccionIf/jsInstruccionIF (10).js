@@ -14,6 +14,7 @@ function mostrar()
 	if(numero>=4&&numero<9)
 	{
 	alert(numero+" APROBO");
+	}
 	
 	else {
 	if(numero<4)
@@ -21,6 +22,8 @@ function mostrar()
 	alert(numero+ " Vamos, la proxima se puede");
 	}
 	
+	}
+
 	}
 
 
