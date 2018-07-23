@@ -6,22 +6,22 @@ a su opción  y le informaremos si ganó, empató o perdió.
 */
 var eleccionMaquina;
 var eleccionJugador;
-var piedra;
-var papel;
-var tijera;
+piedra = 1;
+papel = 2;
+tijera = 3;
 
 function comenzar()
 {
 	eleccionMaquina = Math.floor(Math.random() * 3)+1;
 	alert(eleccionMaquina);
-	piedra = 1;
-	papel = 2;
-	tijera = 3;
-
+	alert("Elija un numero:Piedra(1), papel(2) o tijera(3) ");
+	eleccionJugador = prompt("Piedra(1), papel(2) o tijera(3)");
+	 
 
 }//FIN DE LA FUNCIÓN
 function piedra()
 {
+	
 	if(eleccionMaquina==1&&eleccionJugador==1)
 	{
 		alert("Has empatado!");
@@ -32,19 +32,47 @@ function piedra()
 	}else{
 		if(eleccionMaquina==1&&eleccionJugador==3)
 		{
-			alert("Has ganado!");
+			alert("Has perdido!");
 		}
 	}
 	}
 
 }//FIN DE LA FUNCIÓN
-function papel()
+function papel()//2
 {
+	
+	if(eleccionMaquina==2&&eleccionJugador==2)
+	{
+		alert("Has empatado!");
+	}else{
+		if(eleccionMaquina==1&&eleccionJugador==2)
+		{
+			alert("Has ganado!")
+	}else{
+		if(eleccionMaquina==3&&eleccionJugador==2)
+		{
+			alert("Has perdido!");
+		}
+	}
+	}
 
 
 }//FIN DE LA FUNCIÓN
-function tijera()
+function tijera()//3
 {
-	
-
+		
+	if(eleccionMaquina==3&&eleccionJugador==3)
+	{
+		alert("Has empatado!");
+	}else{
+		if(eleccionMaquina==2&&eleccionJugador==3)
+		{
+			alert("Has ganado!")
+	}else{
+		if(eleccionMaquina==1&&eleccionJugador==3)
+		{
+			alert("Has perdido!");
+		}
+	}
+	}
 }//FIN DE LA FUNCIÓN
