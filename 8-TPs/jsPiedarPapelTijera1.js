@@ -6,16 +6,12 @@ a su opción  y le informaremos si ganó, empató o perdió.
 */
 var eleccionMaquina;
 var eleccionJugador;
-piedra = 1;
-papel = 2;
-tijera = 3;
 
 function comenzar()
 {
 	eleccionMaquina = Math.floor(Math.random() * 3)+1;
-	alert(eleccionMaquina);
-	alert("Elija un numero:Piedra(1), papel(2) o tijera(3) ");
-	eleccionJugador = prompt("Piedra(1), papel(2) o tijera(3)");
+	//alert(eleccionMaquina);
+	eleccionJugador = prompt("Elija un numero:Piedra(1), papel(2) o tijera(3) ");
 	 
 
 }//FIN DE LA FUNCIÓN
@@ -35,7 +31,7 @@ function piedra()
 			alert("Has perdido!");
 		}
 	}
-	}
+}
 
 }//FIN DE LA FUNCIÓN
 function papel()//2
