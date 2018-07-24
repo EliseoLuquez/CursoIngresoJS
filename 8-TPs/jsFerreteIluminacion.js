@@ -34,24 +34,54 @@ function CalcularPrecio ()
   descuento = 1;
   precioBruto = precio*cantidad;
   //Hacer pruebas de escritorio
-  switch(cantidad){ 
+  switch(cantidad){ //case de cantidad para los q no tienen descuento ni dif de marca
         case 1:
-              precioFinal;
-              break;
-  switch(marca){
         case 2:
-              "ArgentinaLuz";  
-              descuento=0.85;
+              precioBruto;
               break;
+        case 3://case con switch(marca) para diferenciar las marcas      
+  switch(marca){
+        case "ArgentinaLuz":
+                  descuento=0.85;
+                  precioBruto;
+                  break;
+case "FelipeLamparas":
+                  descuento=0.9;
+                  precioBruto;
+                  break;
+        default:
+                  descuento=0.95;
+                  precioBruto;
+                  break;
+                  }   
+case 4://para cantidad = 4          
+  switch(marca){
+case "ArgentinaLuz":
+case "FelipeLamparas":
+                  descuento=0.75;
+                  precioBruto;
+                  break; 
+        default:
+                  descuento=0.8;
+                  precioBruto;
+                  break;
+                 }
+case 5://Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
+    switch(marca){
+case "ArgentinaLuz":
+      descuento=0.6;
+      precioBruto;
+      break;
+      default:
+      descuento=0.7;
+      precioBruto;
+      break;          
+      }                 
+
+                  
+
       
-  }            
-
-
-
-
-
-
-
+            
   }
   precioFinal=precioBruto*descuento;
   document.getElementById('precioDescuento').value = precioFinal;
