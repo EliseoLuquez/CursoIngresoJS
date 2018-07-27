@@ -10,12 +10,14 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	var precio;
+	var precio;
  	var precioFinal;
  	var precioBruto;
  	var marca;
  	var cantidad;
  	var descuento;
+ 	var iibb;
+ 	var precioConIibb;
 
  	marca=document.getElementById('Marca').value;
  	cantidad=document.getElementById('Cantidad').value;
@@ -24,8 +26,12 @@ function CalcularPrecio ()
  	precioBruto=parseInt(precioBruto);
  	cantidad=parseInt(cantidad);
  	descuento=parseInt(descuento);
+ 	iibb=parseInt(iibb);
+ 	precioConIibb=parseInt(precioConIibb);
+
 
  	precio=35;
+ 	iibb=1;
  	precioBruto=precio*cantidad;
 
 	switch(cantidad){
@@ -49,8 +55,10 @@ function CalcularPrecio ()
  					precioFinal;
  					break;
  				 }		 					
+ 			}
+ 	switch(cantidad){
  			case 4:
- 	switch(marca){
+ 	switch(marca){ 
  			case "ArgentinaLuz":
  			case "FelipeLamparas":
  					descuento=0.75;
@@ -60,11 +68,36 @@ function CalcularPrecio ()
  					descuento=0.8;
  					precioFinal;
  					break;	
- 				}			 			
+ 				}		 			
  			
  					
  	}
- 	precioFinal=precioBruto*descuento;
+ 	switch(cantidad){
+ 			case 5:
+ 	switch(marca){ 
+ 			case "ArgentinaLuz":
+ 					descuento=0.6;
+ 					precioFinal;
+ 					break;
+ 			default:
+ 					descuento=0.7;
+ 					precioFinal;
+ 					break;	
+ 				}		 			
+ 			}
+ 	switch(cantidad){
+ 			case 6:
+ 					descuento=0.5;
+ 					precioFinal;
+ 					break;
+ 			default:
+ 					descuento=0.5;
+ 					precioFinal>=120;
+ 					iibb=1.1;
+ 					precioFinal;
+ 					break;	
+ 				}
+ 	precioFinal=precioBruto*descuento*iibb;				
  	document.getElementById('precioDescuento').value=precioFinal;
 
 
