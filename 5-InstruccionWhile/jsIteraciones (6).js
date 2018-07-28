@@ -1,17 +1,19 @@
-function mostrar()
+
+ function mostrar()
 {
 
 	var contador=0;
 	var acumulador=0;
-	var suma;
+	var numero;
 
 	while(contador<5){
-		acumulador=prompt("Ingrese un numero");
-		acumulador=parseInt(acumulador);
-		suma=parseInt(suma);
-		suma=acumulador;
-		acumulador+=suma;
+		numero=prompt("Ingrese un numero");
+		numero=parseInt(numero);
 		contador++;
+		acumulador+=numero;//hay que ponerlo en el bucle para no repetir todo...por eso esta acumulador!!
+						   //el acumulador es variable mas variable y guarda el resultado anterior!! cuando dice sumar es acumular en una variable los numeros!!
+						   //es igual que poner suma=suma + numero!!
+		
 
 	}
 
