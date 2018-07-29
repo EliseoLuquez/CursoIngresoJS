@@ -1,6 +1,23 @@
 function mostrar()
 {
-	var numeroUno;
+	var numero;
+	numero=prompt("Ingrese un numero"); 
+	
+	switch(numero)
+	{
+		case :
+	}
+
+
+
+
+
+
+
+
+
+
+	/*var numeroUno;
 	var numeroDos;
 	var suma;
 	var resta;
@@ -24,7 +41,7 @@ function mostrar()
 		alert(resta);
 	}
 
-	}
+	}*/
 
 
 }
