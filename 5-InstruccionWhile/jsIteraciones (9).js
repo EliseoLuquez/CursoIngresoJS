@@ -1,4 +1,4 @@
-function mostrar()
+wfunction mostrar()
 {
 
 	var contador=0;
@@ -15,15 +15,21 @@ function mostrar()
 	{
 		numero=prompt("Ingrese un numero");
 		numero=parseInt(numero);
+		if(contador==0)//bandera para inicializar a 0 max y min
+		{	
+			contador++;
+			maximo=numero;
+			minimo=numero;
+		}
 		if(numero>maximo)
 		{
 			maximo=numero;
 		}
-		if(numero<minimo)
+		else if(numero<minimo)
 		{
 			minimo=numero;
 		}
-
+		
 	
 
 

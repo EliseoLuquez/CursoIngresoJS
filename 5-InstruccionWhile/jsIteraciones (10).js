@@ -7,6 +7,9 @@
 */
 
 
+
+function  mostrar ()
+{
 	var contador;
 	// declarar contadores y variables
 	var numero;
@@ -20,8 +23,6 @@
 	var promedioPositivos;
 	var promedioNegativos;
 	var diferencia;
-function  mostrar ()
-{
 
 	contador=0;
 	positivo=0;
@@ -36,44 +37,48 @@ function  mostrar ()
 			contador++;
 			numero=prompt("Ingrese numero "+contador);
 			numero=parseInt(numero);
-	switch(contador){
-			case 1:
+	//switch(contador){
+			//case 1:
 					if(numero<0)
 					{
 						negativo+=numero;
 						contadorNegativos++;
-						par();
-					}else if(numero==0)
+					}
+					else if(numero==0)
 					{
 						ceros++;
-						par();
-					}else
+					}
+					else
 					{
 						positivo+=numero;
 						contadorPositivos++;
-						par();
 					}
-					break;
-			default:
-										if(numero<0)
+					//break;
+			//default:
+					if(numero<0)
 					{
 						negativo+=numero;
 						contadorNegativos++;
-						par();
-					}else if(numero==0)
+					}
+					else if(numero==0)
 					{
 						ceros++;
-						par();
+						
 					}else
 					{
 						positivo+=numero;
 						contadorPositivos++;
-						par();
 					}
-					break;
+					//break;
 
-	}
+	//}
 	respuesta=prompt("¿Desea continuar?");	
+	
+	if(numero%2==0)
+	{
+		numerosPares++;
+	}
+	
 	}
 	promedioNegativos=negativo/contadorNegativos;
 	promedioPositivos=positivo/contadorPositivos;
@@ -84,11 +89,3 @@ function  mostrar ()
 
 
 } // FIN DE LA FUNCIÓN
-function par ()
-{
-	
-	if(numero%2==0)
-	{
-		numerosPares++;
-	}
-}
