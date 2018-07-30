@@ -7,6 +7,19 @@ de lo contrario los sumo.
 Si la suma es menor a 50 ,además de mostrar el resultado, muestro el mensaje 
 "la suma es xxx y es menor a 50".
 */
+	//switch
+
+	var numeroUno;
+	var numeroDos;
+	numeroUno=prompt("Ingrese un numero");
+	numeroDos=prompt("Ingrese un numero");
+	switch(numeroUno)
+	{
+		case : 
+				break;
+	}
+	/* if
+
 	var numeroUno;
 	var numeroDos;
 	var suma;
@@ -35,5 +48,11 @@ Si la suma es menor a 50 ,además de mostrar el resultado, muestro el mensaje
 	{
 		alert("La suma es "+suma+" y es mayor a 50");
 	}
+	*/
+
+
+	
+
+
 
 }

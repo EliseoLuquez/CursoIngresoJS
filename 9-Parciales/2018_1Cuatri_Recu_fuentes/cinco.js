@@ -7,6 +7,8 @@ si es día hábil “ a trabajar”,
 si no es un día valido, también informarlo, 
 usar una sola ventana alert.*/
 	
+	//swich
+	/*
 	var dias;
 	dias=prompt("Ingrese un dia de la semana");
 	switch(dias)
@@ -25,8 +27,27 @@ usar una sola ventana alert.*/
 		default:
 			alert("No es un dia valido");	
 	}
+	*/
 
 
+	//if
+
+	var dias;
+
+	dias=prompt("Ingrese un dia de la semana");
+
+	if(dias=="sabado"||dias=="domingo")
+	{
+		alert("Buend finde!");
+	}
+	else if(dias=="lunes"||dias=="martes"||dias=="miercoles"||dias=="jueves"||dias=="viernes")
+	{
+		alert("A trabajar!");
+	}
+	else
+	{
+	alert("No es un dia valido");	
+	}
 
 
 
