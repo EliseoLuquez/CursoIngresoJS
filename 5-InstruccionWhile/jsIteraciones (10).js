@@ -22,7 +22,7 @@ function  mostrar ()
 	var numerosPares;//numero%2=0 es par
 	var promedioPositivos;
 	var promedioNegativos;
-	var diferencia;
+	var mensaje;
 
 	contador=0;
 	positivo=0;
@@ -55,7 +55,7 @@ function  mostrar ()
 					}
 					//break;
 			//default:
-					if(numero<0)
+					/*if(numero<0)
 					{
 						negativo+=numero;
 						contadorNegativos++;
@@ -69,7 +69,7 @@ function  mostrar ()
 						positivo+=numero;
 						contadorPositivos++;
 					}
-					//break;
+					//break;*/
 
 	//}
 	respuesta=prompt("¿Desea continuar?");	
@@ -78,12 +78,22 @@ function  mostrar ()
 	{
 		numerosPares++;
 	}
-	
+	if(contadorPositivos>contadorNegativos)
+	{
+		mensaje="Hay "+(contadorPositivos-contadorNegativos)+" positivos mas que negativos";
+	}
+	else if(contadorNegativos>contadorPositivos)
+	{
+		mensaje="Hay "+(contadorNegativos-contadorPositivos)+" negativos mas que positivos";
+	}
+	else
+	{
+		mensaje="Hay la misma cantidad de positivos y negativos";
+	}
 	}
 	promedioNegativos=negativo/contadorNegativos;
 	promedioPositivos=positivo/contadorPositivos;
-	diferencia=negativo+positivo;
-	document.write("Suma de negativos: "+negativo+"<br />suma positivos: "+positivo+"<br />cantidad negativos:"+contadorNegativos+"<br />cantidad positivos: "+contadorPositivos+"<br />canitdad ceros: "+ceros+"<br />cantidad pares: "+numerosPares+"<br />promedio negativos: "+promedioNegativos+"<br />promedio positivos: "+promedioPositivos+"<br />diferencia positivos negativos: "+diferencia);
+	document.write("Suma de negativos: "+negativo+"<br />suma positivos: "+positivo+"<br />cantidad negativos:"+contadorNegativos+"<br />cantidad positivos: "+contadorPositivos+"<br />canitdad ceros: "+ceros+"<br />cantidad pares: "+numerosPares+"<br />promedio negativos: "+promedioNegativos+"<br />promedio positivos: "+promedioPositivos+"<br />diferencia positivos negativos: "+mensaje);
 
 
 
