@@ -11,16 +11,15 @@ Si la suma es menor a 50 ,además de mostrar el resultado, muestro el mensaje
 	var numeroDos;
 	var suma;
 	var divison;
-	suma=numeroUno+numeroDos;
-	divison=numeroUno/numeroDos;
     numeroUno=prompt("Ingrese un numero");
     numeroDos=prompt("Ingrese un numero");
-    numeroUno=parseInt(numeroUno);
-	numeroDos=parseInt(numeroDos);
-	sum=parseInt(sum)
+	numeroUno=parseInt(numeroUno);
+	numeroDos=parseInt(numeroDos);	
+	
+	divison=numeroUno/numeroDos;	
 	if(numeroUno==numeroDos)
 	{
-        alert("numeroUno"+"numeroDos");
+        alert(numeroUno++numeroDos);//falta que salgan concatenados
 	}
 	else if(numeroUno>numeroDos)
 	{
@@ -28,8 +27,11 @@ Si la suma es menor a 50 ,además de mostrar el resultado, muestro el mensaje
 	}
 	else if(numeroUno<numeroDos)
 	{
-		alert(suma)	
-	}else(suma>50)
+	
+		suma=numeroUno+numeroDos;
+		alert(suma);	
+	}
+	if(suma>50)
 	{
 		alert("La suma es "+suma+" y es mayor a 50");
 	}
