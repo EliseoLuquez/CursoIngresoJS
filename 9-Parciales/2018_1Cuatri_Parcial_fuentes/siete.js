@@ -80,9 +80,19 @@ function mostrar()
 	{
 		cantidadDeMenoresDeEdad++;
 	}
-	if(edad>edadMasAlta)
+	
+	if(contador==0)
 	{
 		edadMasAlta=edad;
+		edadMasBaja=edad;
+	}
+	else if(edad>edadMasAlta)
+	{
+		edadMasAlta=edad;
+	}
+	else if(edad<edadMasBaja)
+	{
+		edadMasBaja=edad;
 	}
 	
 
@@ -97,6 +107,8 @@ function mostrar()
 	document.write("<br />Cantidad de hombres: "+cantidadDeHombres);
 	document.write("<br />Cantidad de mayores de edad: "+cantidadDeMayoresDeEdad);
 	document.write("<br />Cantidad de menores de edad: "+cantidadDeMenoresDeEdad);
+	document.write("<br />Edad mas alta: "+edadMasAlta);
+	document.write("<br />Edad mas baja: "+edadMasBaja);
 
 
 }
