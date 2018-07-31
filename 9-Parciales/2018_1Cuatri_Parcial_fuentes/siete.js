@@ -9,16 +9,16 @@ fer f 81
 3-cantidad de mayores de edad:3
 4-cantidad de menores de edad:1
 
-5-la edad mas baja:
-6-la edad mas alta:
-7-promedio de edad mujeres:
-8-promedio de edad hombre:
-9-promedio de edad total:
+5-la edad mas baja:16
+6-la edad mas alta:81
+7-promedio de edad mujeres:48
+8-promedio de edad hombre:29
+9-promedio de edad total:94
 
-10-nombre del mas viejo:
-11-nombre del mas joven:
-12-sexo del mas viejo:
-13-nombre de la mujer mas vieja:
+10-nombre del mas viejo:jesus
+11-nombre del mas joven:jose
+12-sexo del mas viejo:f
+13-nombre de la mujer mas vieja:fer
 
 */
 function mostrar()
@@ -30,17 +30,25 @@ function mostrar()
 	var cantidadDeMujeres;
 	var cantidadDeHombres;
 	var cantidadDeMayoresDeEdad;
-	var catntidadDeMenoresDeEdad;
+	var cantidadDeMenoresDeEdad;
 	var edadMasBaja;
 	var edadMasAlta;
+	var sumaEdadMujeres;
+	var sumaEdadHombres;
+	var promedioDeEdadMujeres;
+	var promedioDeEdadHombres;
+	var promedioTotal;
 
 	contador=0;
 	cantidadDeMujeres=0;
 	cantidadDeHombres=0;
 	cantidadDeMayoresDeEdad=0;
 	cantidadDeMenoresDeEdad=0;
-	edadMasAlta=0;
-	edadMasBaja=0;
+	edadMasAlta=-999;
+	edadMasBaja=999;
+	sumaEdadMujeres=0;
+	sumaEdadHombres=0;
+
 
 
 	while(contador<4)
@@ -49,7 +57,7 @@ function mostrar()
 		nombre=prompt("Ingrese su nombre");
 		
 		sexo=prompt("Ingrese sexo f o m");
-		while(sexo!="f"&&sexo!="m")
+		while(!isNaN(sexo)||sexo!="f"&&sexo!="m")
 		{
 			sexo=prompt("Ingrese sexo valido f o m");
 		}
@@ -67,10 +75,13 @@ function mostrar()
 	if(sexo=="m")
 	{
 		cantidadDeHombres++;
+		sumaEdadHombres+=edad;
+
 	}
 	else
 	{
 		cantidadDeMujeres++;
+		sumaEdadMujeres+=edad;
 	}
 	if(edad>=18)
 	{
@@ -94,8 +105,11 @@ function mostrar()
 	{
 		edadMasBaja=edad;
 	}
-	
 
+	
+	promedioDeEdadMujeres=sumaEdadMujeres/cantidadDeMujeres;
+	promedioDeEdadHombres=sumaEdadHombres/cantidadDeHombres;
+	promedioTotal=(sumaEdadMujeres+sumaEdadHombres/(cantidadDeMujeres+cantidadDeHombres));
 
 
 
@@ -109,6 +123,7 @@ function mostrar()
 	document.write("<br />Cantidad de menores de edad: "+cantidadDeMenoresDeEdad);
 	document.write("<br />Edad mas alta: "+edadMasAlta);
 	document.write("<br />Edad mas baja: "+edadMasBaja);
-
-
+	document.write("<br />Promedio de edad de mujeres: "+promedioDeEdadMujeres);
+	document.write("<br />Promedio de edad de hombres: "+promedioDeEdadHombres);
+	document.write("<br />Promedio de edad total: "+promedioTotal);
 }
