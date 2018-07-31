@@ -21,7 +21,7 @@ wfunction mostrar()
 			maximo=numero;
 			minimo=numero;
 		}
-		if(numero>maximo)
+		else if(numero>maximo)
 		{
 			maximo=numero;
 		}
