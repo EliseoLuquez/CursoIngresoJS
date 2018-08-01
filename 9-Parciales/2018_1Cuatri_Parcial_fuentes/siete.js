@@ -38,6 +38,8 @@ function mostrar()
 	var promedioDeEdadMujeres;
 	var promedioDeEdadHombres;
 	var promedioTotal;
+	var sumaEdadTotal;
+	var sumaCantidadTotal;
 
 	contador=0;
 	cantidadDeMujeres=0;
@@ -48,6 +50,8 @@ function mostrar()
 	edadMasBaja=999;
 	sumaEdadMujeres=0;
 	sumaEdadHombres=0;
+	sumaEdadTotal=0;
+	sumaCantidadTotal=0;
 
 
 
@@ -109,7 +113,9 @@ function mostrar()
 	
 	promedioDeEdadMujeres=sumaEdadMujeres/cantidadDeMujeres;
 	promedioDeEdadHombres=sumaEdadHombres/cantidadDeHombres;
-	promedioTotal=(sumaEdadMujeres+sumaEdadHombres/(cantidadDeMujeres+cantidadDeHombres));
+	sumaEdadTotal=sumaEdadMujeres+sumaEdadHombres;
+	sumaCantidadTotal=cantidadDeHombres+cantidadDeMujeres;
+	promedioTotal=sumaEdadTotal/sumaCantidadTotal;
 
 
 
