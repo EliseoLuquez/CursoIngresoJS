@@ -13,7 +13,7 @@ fer f 81
 6-la edad mas alta:81
 7-promedio de edad mujeres:48
 8-promedio de edad hombre:29
-9-promedio de edad total:94
+9-promedio de edad total:38.75
 
 10-nombre del mas viejo:jesus
 11-nombre del mas joven:jose
@@ -40,6 +40,10 @@ function mostrar()
 	var promedioTotal;
 	var sumaEdadTotal;
 	var sumaCantidadTotal;
+	var elMasViejo;
+	var laMasVieja;
+	var laMasJoven;
+	var elMasJoven;
 
 	contador=0;
 	cantidadDeMujeres=0;
@@ -80,7 +84,6 @@ function mostrar()
 	{
 		cantidadDeHombres++;
 		sumaEdadHombres+=edad;
-
 	}
 	else
 	{
@@ -104,11 +107,22 @@ function mostrar()
 	else if(edad>edadMasAlta)
 	{
 		edadMasAlta=edad;
+
 	}
 	else if(edad<edadMasBaja)
 	{
 		edadMasBaja=edad;
 	}
+	if(sexo=="m"&&edadMasAlta==edad)
+	{
+		elMasViejo=nombre;
+	}
+	else if(sexo=="m"&&edadMasBaja==edad)
+	{
+		elMasJoven=nombre;
+	}	
+
+	
 
 	
 	promedioDeEdadMujeres=sumaEdadMujeres/cantidadDeMujeres;
@@ -132,4 +146,6 @@ function mostrar()
 	document.write("<br />Promedio de edad de mujeres: "+promedioDeEdadMujeres);
 	document.write("<br />Promedio de edad de hombres: "+promedioDeEdadHombres);
 	document.write("<br />Promedio de edad total: "+promedioTotal);
+	document.write("<br />Nombre del mas joven: "+elMasJoven);
+	document.write("<br />Nombre del mas viejo: "+elMasViejo);
 }
