@@ -20,6 +20,13 @@ fer f 81
 12-sexo del mas viejo:f
 13-nombre de la mujer mas vieja:fer
 
+
+crear algoritmo segun como me pregunto y lo busco 
+
+
+
+
+
 */
 function mostrar()
 {
