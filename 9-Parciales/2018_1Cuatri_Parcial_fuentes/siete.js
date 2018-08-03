@@ -44,18 +44,23 @@ function mostrar()
 	var laMasVieja;
 	var laMasJoven;
 	var elMasJoven;
+	var nombreFemMasVieja;
+	var nombreMascMasViejo;
+	var nombreMascMasJoven;
+	var sexoMaximo;
 
 	contador=0;
 	cantidadDeMujeres=0;
 	cantidadDeHombres=0;
 	cantidadDeMayoresDeEdad=0;
 	cantidadDeMenoresDeEdad=0;
-	edadMasAlta=-999;
+	edadMasAlta=0;
 	edadMasBaja=999;
 	sumaEdadMujeres=0;
 	sumaEdadHombres=0;
 	sumaEdadTotal=0;
 	sumaCantidadTotal=0;
+	laMasVieja=0;
 
 
 
@@ -84,11 +89,30 @@ function mostrar()
 	{
 		cantidadDeHombres++;
 		sumaEdadHombres+=edad;
+		if(edad>elMasViejo)
+		{
+			elMasViejo=edad;
+			nombreMascMasViejo=nombre;
+		}
+		else if(edad<elMasJoven)
+		{
+			elMasJoven=edad;
+			nombreMascMasJoven=nombre;
+		}			
 	}
 	else
-	{
+	{	
 		cantidadDeMujeres++;
 		sumaEdadMujeres+=edad;
+		if(edad>laMasVieja)
+		{
+			laMasVieja=edad;
+			nombreFemMasVieja=nombre;
+		}
+		else if(edad<laMasJoven)
+		{
+			laMasJoven=edad;
+		}
 	}
 	if(edad>=18)
 	{
@@ -99,7 +123,7 @@ function mostrar()
 		cantidadDeMenoresDeEdad++;
 	}
 	
-	if(contador==0)
+	if(contador==1)
 	{
 		edadMasAlta=edad;
 		edadMasBaja=edad;
@@ -107,21 +131,13 @@ function mostrar()
 	else if(edad>edadMasAlta)
 	{
 		edadMasAlta=edad;
-
+		sexoMaximo=sexo;
 	}
 	else if(edad<edadMasBaja)
 	{
 		edadMasBaja=edad;
 	}
-	if(sexo=="m"&&edadMasAlta==edad)
-	{
-		elMasViejo=nombre;
-	}
-	else if(sexo=="m"&&edadMasBaja==edad)
-	{
-		elMasJoven=nombre;
-	}	
-
+	
 	
 
 	
@@ -148,4 +164,6 @@ function mostrar()
 	document.write("<br />Promedio de edad total: "+promedioTotal);
 	document.write("<br />Nombre del mas joven: "+elMasJoven);
 	document.write("<br />Nombre del mas viejo: "+elMasViejo);
+	document.write("<br />Nombre de la mas vieja: "+nombreFemMasVieja);
+	document.write("<br />Sexo del mayor: "+sexoMaximo);
 }
