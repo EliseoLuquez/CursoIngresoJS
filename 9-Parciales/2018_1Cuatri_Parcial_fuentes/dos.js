@@ -1,13 +1,17 @@
 function mostrar()
 {
-	var nombre;
-	var localidad;
+  	/*Bienvenidos. 
+	mostrar por alert el mensaje "usted es xxxxx y vive en la localidad de xxxxxxxx".
 
-	nombre = document.getElementById('elNombre').value;
-	localidad = document.getElementById('laLocalidad').value;
+  	*/
+  	var nombre;
+  	var localidad;
 
-	alert("Usted es "+nombre+" y vive en la localidad de "+localidad);
+  	nombre=prompt("ingrese su nombre");
+	localidad=prompt("ingrese su localidad");  	
 
+	document.getElementById('elNombre').value=nombre;
+	document.getElementById('laLocalidad').value=localidad;
 
 
 
