@@ -1,147 +1,121 @@
 function mostrar()
-{
-	/*
-	Bienvenidos. 
-Realizar el algoritmo que permita el ingreso por prompt de las notas (validar entre 0 y 10),
-la edad y el sexo (validar el sexo “f” o “m”) de 5 alumnos, informar por alert: 
-a) El promedio de las notas totales. 
-b) La nota más baja y el sexo de esa persona. 
-c) La cantidad de varones mayores a 18, que su nota haya sido mayor o igual a 6. 
-d) El sexo y la nota del más joven 
-d) La edad y la nota de la primera mujer ingresada o informar si no hubo ninguna mujer.
-*/
+{	
+	/*Bienvenidos. 
+	Realizar el algoritmo que permita el ingreso por prompt de las notas (validar entre 0 y 10)
+	,la edad y el sexo (validar el sexo “f” o “m”) de 5 alumnos, informar por alert: 
+	a) El promedio de las notas totales. 
+	b) La nota más baja y el sexo de esa persona. 
+	c) La cantidad de varones mayores a 18, que su nota haya sido mayor o igual a 6. 
+	d) El sexo y la nota del más joven 
+	d) La edad y la nota de la primera mujer ingresada o informar si no hubo ninguna mujer.
+	*/
 
-	var notas;
+	var nota;
 	var edad;
 	var sexo;
-	var mensaje;
 	var contador;
-	var promedio;
 	var acumuladorNotas;
 	var notaMasBaja;
-	var notaMasAlta;
 	var sexoNotaMasBaja;
-	var sexoNotaMasAlta;
-	var varonesMayores;
-	var notaMasJoven;
-	var sexoMasJoven;
-	var sexoNotaMasJoven;
+	var contadorDeVaronesMayores;
 	var edadMasBaja;
 	var contadorMujeres;
-	var notaPrimeraMujer;
 	var edadPrimeraMujer;
+	var notaPrimeraMujer;
 
 	contador=0;
 	acumuladorNotas=0;
-	varonesMayores=0;
+	notaMasBaja=0;
+	contadorDeVaronesMayores=0;
 	contadorMujeres=0;
-
-	varonesMayores=parseInt(varonesMayores);
-	
-
-
 
 
 	while(contador<5)
-	{
+	{	
 		contador++;
-		notas=prompt("Ingrese nota");
-		notas=parseInt(notas);
-		acumuladorNotas+=notas;
-		while(isNaN(notas)||notas<0||notas>10)
+
+		nota=prompt("Ingrese nota");
+		nota=parseInt(nota);
+		acumuladorNotas+=nota;
+		while(isNaN(nota)||nota<0||nota>10)
 		{
-			notas=prompt("Ingrese nota valida");
-			notas=parseInt(notas);
+		nota=prompt("Ingrese nota valida");
+		nota=parseInt(nota);
 		}
 
 		edad=prompt("Ingrese edad");
 		edad=parseInt(edad);
-		while(isNaN(edad)||edad<16||edad>60)
+		while(isNaN(edad)||edad<17||edad>55)
 		{
-			edad=prompt("Ingrese edad valida");
-			edad=parseInt(edad);
-		}
+		edad=prompt("Ingrese edad valida");
+		edad=parseInt(edad);
+		}	
 
-		sexo=prompt("Ingrese sexo f o m ");
-		while(!isNaN(sexo)||sexo!="f"&&sexo!="m")
+		sexo=prompt("Ingrese sexo ");
+		while(!isNaN(sexo)&&sexo!="m"&&sexo!="f")
 		{
-			sexo=prompt("Ingrese sexo valido, f o m ");
-		}
-	
-		if(contador==1)
-		{
-			notaMasBaja=notas;
-			sexoNotaMasBaja=sexo;
-		}
-		else if(notas<notaMasBaja)
-		{
-			notaMasBaja=notas;
-			sexoNotaMasBaja=sexo;
-		}
-	
-		if(edad>17&&notas>5)
-		{
-			varonesMayores++;
-		}
+		sexo=prompt("Ingrese sexo valida");
+		}	
 
 		if(contador==1)
 		{
-			notaMasJoven=notas;
+			notaMasBaja=nota;
+			sexoNotaMasBaja=sexo;
+		}
+		else if(nota<notaMasBaja)
+		{
+			notaMasBaja=nota;
+			sexoNotaMasBaja=sexo;
+		
+		}
+
+		if(sexo=="m"&&edad>17&&nota>5)
+		{	
+			contadorDeVaronesMayores++;
+		}
+
+		if(contador==1)
+		{
 			sexoNotaMasJoven=sexo;
+			notaMasJoven=nota;
 		}
 		else if(edad<edadMasBaja)
-		{
-			notaMasJoven=notas;
+		{	
+			edadMasBaja=edad;
 			sexoNotaMasJoven=sexo;
+			notaMasJoven=nota;
 		}
+
 		if(sexo=="f"&&contadorMujeres==0)
 		{
 			contadorMujeres++;
-			notaPrimeraMujer=notas;
-			edadPrimeraMujer=notas;
+			edadPrimeraMujer=edad;
+			notaPrimeraMujer=nota;
 		}
 
 
 
 
+
+
 	}
 
-
-
-
-
-
-
-	promedio=acumuladorNotas/contador;
-	alert("Promedio de notas: "+promedio);
-	alert(" La nota mas baja es "+notaMasBaja+" y su sexo es "+sexoNotaMasBaja);
-	alert(" cantidad mayores "+varonesMayores);
-	alert(" El sexo de la nota mas joven "+sexoNotaMasJoven+" y su nota "+notaMasJoven);
-	alert("Edad primera mujer "+varonesMayores);
+	promedio=acumuladorNotas/contador;	
+	alert("Promedio de notas "+promedio);
+	alert("La nota mas baja es "+notaMasBaja);
+	alert("El sexo de la nota mas baja es "+sexoNotaMasBaja);
+	alert("Los mayores con nota superior o igual 6 son "+contadorDeVaronesMayores);
+	alert("El sexo de la nota mas joven es "+sexoNotaMasJoven+" y su nota es "+notaMasJoven);
 
 	if(contadorMujeres>0)
 	{
-		alert("Edad primera mujer "+edadPrimeraMujer+" nota primera mujer ingresada "+notaPrimeraMujer);
+		alert("La edad de la primera mujer ingresada es "+edadPrimeraMujer+" y su nota es "+notaPrimeraMujer);
 	}
 	else
 	{
-		alert("No se ingresaron mujeres");
+		alert("No hubo mujeres ingresadas");
 	}
-	
 
-	/* dentro del while
-	var contador mujeres;
-	if(sexo=="f"&&contadormujeres==0)		
-	{
-		contadormujeres++;
-		o existemujeres=true;
-	}
-	fuera del while
-	if(contadormujere>0)
-	{
-	
-	}*/
-	
 
 
 
